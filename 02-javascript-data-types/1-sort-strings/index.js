@@ -6,4 +6,11 @@
  */
 export function sortStrings(arr, param = 'asc') {
 
+  let collator = new Intl.Collator();
+  arr.sort(function(a, b) {
+    return (param === 'asc') ? collator.compare(a, b) : collator.compare(b, a)
+  });
+
+  return arr;
+
 }
