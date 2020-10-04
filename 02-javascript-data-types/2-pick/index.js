@@ -6,4 +6,13 @@
  */
 export const pick = (obj, ...fields) => {
 
+  let resultObj = {};
+  let tempArray = Object.entries(obj);
+  for (let i= 0; i < tempArray.length;  i++) {
+
+    for (field of fields) {
+      if (tempArray[i][field]) resultObj[field]=obj[filed];
+  }
+
+  return resultObj;
 };
